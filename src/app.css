@@ -1,0 +1,136 @@
+body{
+    background-color:#E5E5E5 ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.calcWrapper{
+    width: 375px;
+    height: 609px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.calcScreen{
+    width: 375px;
+    height: 223px;
+    background-color: #D2CFCF;
+    color: black;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+#expression{
+    width: auto;
+    height: 84px;
+    font-size: 50px;
+    border: 0px;
+    margin-bottom: 15px;
+    background-color: transparent;
+    justify-content: flex-end;
+    text-align-last: right;
+    
+}
+#expression:focus{
+    outline: none;
+}
+#result{
+    width: auto;
+    height: 44px;
+    border: 0px;
+    font-size: 33px;
+    background-color: transparent;
+    justify-content: flex-end;
+    text-align-last: right;
+}
+#result:focus{
+    outline: none;
+}
+.calcKeypad{
+    width: 375px;
+    height: 352px;
+    display: flex;
+    flex-direction: column;
+    
+}
+.specialSymbols{
+    width: 375px; 
+    height: 51px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+.specialSym{
+    width: 47px;
+    height: 51px;
+    margin: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.specialSym:hover{
+    background-color: rgb(197, 192, 192);
+}
+.symImage{
+    width: 28px;
+    height: 28px;
+}
+.symbols{
+    width: 375px;
+    height: 297px; 
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+}
+.numbers{
+    width: 67px;
+    height: 67px;
+    background-color: white;
+    color: black;
+    border-radius: 20px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+.numbers:hover{
+    background-color: rgb(197, 192, 192);
+}
+.mathSymbols{
+    width: 67px;
+    height: 67px;
+    background-color: #E37BFC;
+    color: black;
+    border-radius: 20px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mathSymbols:hover{
+    background-color: #c542e6;
+}
+#equals{
+    width: 142px;
+    height: 67px;
+}
+.symbolImage{
+    width: 28px;
+    height: 28px;
+}
+#del{
+    font-size: 25px;
+}
+#ac{
+    font-size: 25px;
+    color: white;
+}
