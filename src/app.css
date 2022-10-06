@@ -21,10 +21,12 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     margin-bottom: 15px;
+    
 }
 #expression{
-    width: auto;
+    width: 320px;
     height: 84px;
     font-size: 50px;
     border: 0px;
@@ -38,7 +40,7 @@ body{
     outline: none;
 }
 #result{
-    width: auto;
+    width: 350px;
     height: 44px;
     border: 0px;
     font-size: 33px;
