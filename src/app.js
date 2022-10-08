@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+const calcScreen = document.querySelector(".calcScreen")
 const expression = document.querySelector("#expression")
 const result = document.querySelector("#result")
 const pi = document.querySelector("#pie")
@@ -25,10 +26,100 @@ const period = document.querySelector("#period")
 const zero = document.querySelector("#zero")
 const del = document.querySelector("#del")
 const equals = document.querySelector("#equals")
+const numbers = document.querySelectorAll(".numbers")
 
-console.log(expression.value)
 
-
+let x = expression.value
+let x1 = x.toString()
+let x2 = x1.split("")
+x2.pop()
+if(x2.length > 11){
+    calcScreen.style.overflowX = "scroll"
+}
+let valuesArray = []
+numbers.forEach(number => number.addEventListener("click",() => {
+    setTimeout(() => {
+        let value = expression.value
+        console.log(value)
+        let exp1 = value.split("")
+        if(exp1.includes("+") == true){
+            let exp2 = value.split("+")
+            let from = Array.from(exp2)
+            let from2 = from.pop()
+            let exp3 = from2 * 1
+            if(isNaN(exp3) == false){
+                let exp4 = valuesArray[0] + exp3
+                valuesArray.splice(0,1, exp4)
+                console.log(valuesArray)
+            }else if(isNaN(exp3) == true){
+                console.log("exp3 is NaN")
+            }
+            
+            
+        }
+        if(exp1.includes("−")){
+            let exp2 = value.split("−")
+            let from = Array.from(exp2)
+            let from2 = from.pop()
+            let exp3 = from2 * 1
+            if(isNaN(exp3) == false){
+                let exp4 = valuesArray[0] - exp3
+                valuesArray.splice(0,1, exp4)
+                console.log(valuesArray)
+            }else if(isNaN(exp3) == true){
+                console.log("exp3 is NaN")
+            }
+            console.log(valuesArray)
+        }
+        if(exp1.includes("×")){
+            let exp2 = value.split("×")
+            let from = Array.from(exp2)
+            let from2 = from.pop()
+            let exp3 = from2 * 1
+            if(isNaN(exp3) == false){
+                let exp4 = valuesArray[0] * exp3
+                valuesArray.splice(0,1, exp4)
+                console.log(valuesArray)
+            }else if(isNaN(exp3) == true){
+                console.log("exp3 is NaN")
+            }
+            console.log(valuesArray)
+        }
+        if(exp1.includes("÷")){
+            let exp2 = value.split("÷")
+            let from = Array.from(exp2)
+            /*let filterFrom = from.filter(num => num.includes("%"))
+            let boo = filterFrom[0].split("%")
+            boo.pop()
+            let foo = boo[0] * 1
+            let foo1 = foo / 100
+            from.splice(0,1, foo1)
+            console.log(foo1)
+            console.log(from)*/
+            
+            let from2 = from.pop()
+            let exp3 = from2 * 1
+            if(isNaN(exp3) == false){
+                let exp4 = valuesArray[0] / exp3
+                valuesArray.splice(0,1, exp4)
+                console.log(valuesArray[0])
+            }else if(isNaN(exp3) == true){
+                console.log("exp3 is NaN")
+            }
+        }else if(value.length >= 0 && exp1.includes("+","−","×","÷") == false){
+            let value1 = value * 1
+            if(isNaN(value1) == false){
+                valuesArray.splice(0,1, value1)
+                console.log(value1)
+            }else if(isNaN(value1) == true){
+                console.log("value1 is NaN")
+            }
+           
+        } 
+    },500)
+       
+    })
+)
 
 one.addEventListener("click", () =>{
    expression.setAttribute("value", expression.value + 1)
@@ -65,6 +156,7 @@ period.addEventListener("click", () =>{
 })
 addition.addEventListener("click", () =>{
     expression.setAttribute("value", expression.value + "+")
+    
 })
 minus.addEventListener("click", () =>{
     expression.setAttribute("value", expression.value + "−")
@@ -105,9 +197,65 @@ del.addEventListener("click", () => {
     x2.pop()
     let x3 = x2.join("")
     console.log(x3)
-    expression.setAttribute("value", x3)   
+    expression.setAttribute("value", x3) 
+    result.setAttribute("value", "")  
 })
+equals.addEventListener("click", results)
+function results() {
+    result.setAttribute("value", valuesArray[0])
+    //let expArray = []
+    //let exp = expression.value
+    /*let w = exp.split("+")
+    let z = Array.from(w)
+    let checkPercentage = z.filter(num => num.includes("%"))
+    if(checkPercentage === true){
+        let map = checkPercentage.map(per => {
+            let b = per.split("%") 
+            let c = b[0] * 1 * 100 
+            y.push(c)
+            console.log(map)
+        })
+    }*/
+       
+    /*let exp4 = exp.split("")
+    if(exp4.includes("+")){
+        let exp2 = exp.split("+")
+        let y = Array.from(exp2)
+        let update = y.map(age => age * 1)
+        let results = update.reduce((pre, cur) => pre + cur)
+        result.setAttribute("value", results)
 
+    }else if(exp4.includes("−")){
+        let exp2 = exp.split("−")
+        let y = Array.from(exp2)
+        let update = y.map(age => age * 1)
+        let results = update.reduce((pre, cur) => pre - cur)
+        result.setAttribute("value", results)
+        console.log(results)
+    }else if(exp4.includes("×")){
+        let exp2 = exp.split("×")
+        let y = Array.from(exp2)
+        let update = y.map(age => age * 1)
+        let results = update.reduce((pre, cur) => pre * cur)
+        result.setAttribute("value", results)
+        console.log(results)
+    }else if(exp4.includes("÷")){
+        let exp2 = exp.split("÷")
+        let y = Array.from(exp2)
+        let update = y.map(age => age * 1)
+        let results = update.reduce((pre, cur) => pre / cur)
+        result.setAttribute("value", results)
+        console.log(results)
+    }else if(exp4.includes("%")){
+        console.log(exp4)
+        /*let y = Array.from(exp2)
+        let update = y.map(age => age * 1)
+        let result = update.reduce((pre, cur) => pre / cur)
+        console.log(result)
+    }*/
+    
+    //console.log(typeof(expArray));
+}
 
 
 
