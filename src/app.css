@@ -109,6 +109,7 @@ body{
 }
 .numbers:hover{
     background-color: rgb(197, 192, 192);
+    cursor: default;
 }
 .mathSymbols{
     width: 67px;
@@ -133,6 +134,19 @@ body{
 }
 #del{
     font-size: 25px;
+    width: 67px;
+    height: 67px;
+    background-color: white;
+    color: black;
+    border-radius: 20px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+#del:hover{
+    background-color: rgb(197, 192, 192);
+    cursor: default;
 }
 #ac{
     font-size: 25px;
