@@ -90,7 +90,7 @@ body{
     width: 375px;
     height: 297px; 
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
@@ -124,9 +124,30 @@ body{
 .mathSymbols:hover{
     background-color: #c542e6;
 }
-#equals{
-    width: 142px;
+/*#modulus{
+    width: 67px;
     height: 67px;
+    background-color: #E37BFC;
+    color: black;
+    border-radius: 20px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#modulus:hover{
+    background-color: #c542e6;
+}*/
+#equals{
+    width: 67px;
+    height: 213px;
+}
+
+
+#equals1{
+    background-color: transparent;
+}
+#equals2{
+    background-color: transparent;
 }
 .symbolImage{
     width: 28px;
